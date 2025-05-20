@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akai Novels | Read Light Novels & Web Novels</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'rounded': ['"M PLUS Rounded 1c"', 'sans-serif'],
+                    },
+                    colors: {
+                        'anime-red': '#ff2d54',
+                        'anime-pink': '#ff7eb9',
+                        'anime-blue': '#2dd4ff',
+                        'anime-purple': '#b388ff',
+                        'anime-dark': '#1a1a2e',
+                        'anime-darker': '#16213e',
+                    },
+                    backgroundImage: {
+                        'sakura-pattern': "url('https://www.transparenttextures.com/patterns/sakura.png')",
+                        'rice-paper': "url('https://www.transparenttextures.com/patterns/rice-paper.png')",
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-fast': 'float 4s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-stroke {
+                -webkit-text-stroke: 1px #fff;
+                text-stroke: 1px #fff;
+            }
+            .text-stroke-thick {
+                -webkit-text-stroke: 2px #fff;
+                text-stroke: 2px #fff;
+            }
+            .perspective-1000 {
+                perspective: 1000px;
+            }
+            .transform-style-preserve-3d {
+                transform-style: preserve-3d;
+            }
+            .backface-hidden {
+                backface-visibility: hidden;
+            }
+        }
+    </style>
+</head>
+<body class="font-rounded bg-anime-dark text-gray-200 min-h-screen bg-cover bg-fixed" style="background-image: url('https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?q=80&w=2070&auto=format&fit=crop')">
+    <!-- Navigation -->
+    <nav class="bg-anime-darker/90 backdrop-blur-md sticky top-0 z-50 border-b border-anime-purple/30">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <div class="w-10 h-10 bg-anime-red rounded-full flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                </div>
+                <a href="#" class="text-2xl font-bold bg-gradient-to-r from-anime-red to-anime-pink bg-clip-text text-transparent">AkaiNovels</a>
+            </div>
+
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#" class="hover:text-anime-pink transition-colors font-medium">Home</a>
+                <a href="#" class="hover:text-anime-pink transition-colors">Library</a>
+                <a href="#" class="hover:text-anime-pink transition-colors">Genres</a>
+                <a href="#" class="hover:text-anime-pink transition-colors">Rankings</a>
+                <a href="#" class="hover:text-anime-pink transition-colors">Updates</a>
+            </div>
+
+            <div class="flex items-center space-x-4">
+                <button class="p-2 rounded-full hover:bg-anime-darker transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </button>
+                <button class="md:hidden p-2 rounded-full hover:bg-anime-darker transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+                <button class="hidden md:block bg-gradient-to-r from-anime-red to-anime-pink px-4 py-2 rounded-full font-medium hover:opacity-90 transition-opacity">Sign In</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden py-16 md:py-24">
+        <div class="absolute inset-0 bg-black/40 z-0"></div>
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10 z-0"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 text-white text-stroke-thick">
+                    <span class="bg-gradient-to-r from-anime-red to-anime-pink bg-clip-text text-transparent">Read</span>
+                    <span class="bg-gradient-to-r from-anime-blue to-anime-purple bg-clip-text text-transparent">Japanese</span>
+                    <span class="bg-gradient-to-r from-anime-pink to-anime-red bg-clip-text text-transparent">Novels</span>
+                </h1>
+                <p class="text-lg md:text-xl mb-8 text-gray-300">Discover thousands of translated light novels, web novels, and fan translations updated daily!</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <button class="bg-gradient-to-r from-anime-red to-anime-pink px-6 py-3 rounded-full font-bold hover:shadow-lg hover:shadow-anime-red/30 transition-all">
+                        Start Reading Now
+                    </button>
+                    <button class="bg-white/10 border border-white/20 px-6 py-3 rounded-full font-bold hover:bg-white/20 backdrop-blur-sm transition-all">
+                        Browse Library
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Floating anime characters -->
+        <div class="absolute top-20 left-10 opacity-70 animation-float hidden lg:block">
+            <img src="https://i.imgur.com/J1vYw0F.png" alt="Anime character" class="h-40">
+        </div>
+        <div class="absolute bottom-10 right-10 opacity-80 animation-float-fast hidden lg:block">
+            <img src="https://i.imgur.com/LbZQZ1J.png" alt="Anime character" class="h-48">
+        </div>
+    </section>
+
+    <!-- Featured Novels -->
+    <section class="py-16 bg-anime-darker/70 backdrop-blur-sm bg-[url('https://www.transparenttextures.com/patterns/sakura.png')]">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between mb-10">
+                <h2 class="text-3xl font-bold">
+                    <span class="bg-gradient-to-r from-anime-blue to-anime-purple bg-clip-text text-transparent">Featured</span>
+                    <span class="text-white">Novels</span>
+                </h2>
+                <a href="#" class="text-anime-pink hover:underline flex items-center">
+                    View All
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                <!-- Novel Card 1 -->
+                <div class="group perspective-1000">
+                    <div class="relative h-72 transform-style-preserve-3d transition-transform duration-500 group-hover:rotate-y-180">
+                        <!-- Front -->
+                        <div class="absolute backface-hidden w-full h-full bg-anime-dark rounded-lg overflow-hidden shadow-lg border border-anime-purple/20">
+                            <div class="h-48 bg-gradient-to-br from-anime-blue/30 to-anime-purple/30 relative overflow-hidden">
+                                <img src="https://i.imgur.com/5X3QJZr.jpg" alt="Novel cover" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                                <div class="absolute bottom-3 left-3">
+                                    <span class="bg-anime-red text-xs font-bold px-2 py-1 rounded">NEW</span>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <h3 class="font-bold text-white line-clamp-1">Reincarnated as a Slime in Another World</h3>
+                                <p class="text-xs text-gray-400 mt-1 line-clamp-2">After dying, Satoru Mikami is reincarnated as a slime in a fantasy world with unique abilities...</p>
+                            </div>
+                        </div>
+                        <!-- Back -->
+                        <div class="absolute backface-hidden w-full h-full bg-anime-dark rounded-lg overflow-hidden shadow-lg border border-anime-purple/20 rotate-y-180 p-4 flex flex-col">
+                            <h3 class="font-bold text-white">Reincarnated as a Slime</h3>
+                            <div class="flex items-center mt-2 text-sm">
+                                <span class="text-yellow-400">★★★★★</span>
+                                <span class="text-gray-400 ml-1">(4.9)</span>
+                            </div>
+                            <div class="mt-2 text-xs text-gray-400">
+                                <div class="flex justify-between py-1 border-b border-gray-700">
+                                    <span>Author:</span>
+                                    <span class="text-white">Fuse</span>
+                                </div>
+                                <div class="flex justify-between py-1 border-b border-gray-700">
+                                    <span>Chapters:</span>
+                                    <span class="text-white">248</span>
+                                </div>
+                                <div class="flex justify-between py-1">
+                                    <span>Status:</span>
+                                    <span class="text-green-400">Ongoing</span>
+                                </div>
+                            </div>
+                            <button class="mt-auto bg-gradient-to-r from-anime-blue to-anime-purple text-white py-2 rounded text-sm font-medium hover:opacity-90 transition-opacity">
+                                Read Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Novel Card 2 -->
+                <div class="group perspective-1000">
+                    <div class="relative h-72 transform-style-preserve-3d transition-transform duration-500 group-hover:rotate-y-180">
+                        <!-- Front -->
+                        <div class="absolute backface-hidden w-full h-full bg-anime-dark rounded-lg overflow-hidden shadow-lg border border-anime-purple/20">
+                            <div class="h-48 bg-gradient-to-br from-anime-red/30 to-anime-pink/30 relative overflow-hidden">
+                                <img src="https://i.imgur.com/8QZQZ1J.jpg" alt="Novel cover" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                                <div class="absolute bottom-3 left-3">
+                                    <span class="bg-anime-blue text-xs font-bold px-2 py-1 rounded">POPULAR</span>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <h3 class="font-bold text-white line-clamp-1">Sword Art Online: Progressive</h3>
+                                <p class="text-xs text-gray-400 mt-1 line-clamp-2">A detailed retelling of Kirito's journey through Aincrad from floor one upwards...</p>
+                            </div>
+                        </div>
+                        <!-- Back -->
+                        <div class="absolute backface-hidden w-full h-full bg-anime-dark rounded-lg overflow-hidden shadow-lg border border-anime-purple/20 rotate-y-180 p-4 flex flex-col">
+                            <h3 class="font-bold text-white">SAO Progressive</h3>
+                            <div class="flex items-center mt-2 text-sm">
+                                <span class="text-yellow-400">★★★★☆</span>
+                                <span class="text-gray-400 ml-1">(4.5)</span>
+                            </div>
+                            <div class="mt-2 text-xs text-gray-400">
+                                <div class="flex justify-between py-1 border-b border-gray-700">
+                                    <span>Author:</span>
+                                    <span class="text-white">Reki Kawahara</span>
+                                </div>
+                                <div class="flex justify-between py-1 border-b border-gray-700">
+                                    <span>Chapters:</span>
+                                    <span class="text-white">87</span>
+                                </div>
+                                <div class="flex justify-between py-1">
+                                    <span>Status:</span>
+                                    <span class="text-green-400">Ongoing</span>
+                                </div>
+                            </div>
+                            <button class="mt-auto bg-gradient-to-r from-anime-red to-anime-pink text-white py-2 rounded text-sm font-medium hover:opacity-90 transition-opacity">
+                                Read Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Novel Card 3 -->
+                <div class="group perspective-1000">
+                    <div class="relative h-72 transform-style-preserve-3d transition-transform duration-500 group-hover:rotate-y-180">
+                        <!-- Front -->
+                        <div class="absolute backface-hidden w-full h-full bg-anime-dark rounded-lg overflow-hidden shadow-lg border border-anime-purple/20">
+                            <div class="h-48 bg-gradient-to-br from-anime-purple/30 to-anime-blue/30 relative overflow-hidden">
+                                <img src="https://i.imgur.com/9X3QJZr.jpg" alt="Novel cover" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                                <div class="absolute bottom-3 left-3">
+                                    <span class="bg-anime-pink text-xs font-bold px-2 py-1 rounded">TRENDING</span>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <h3 class="font-bold text-white line-clamp-1">The Rising of the Shield Hero</h3>
+                                <p class="text-xs text-gray-400 mt-1 line-clamp-2">Naofumi Iwatani is summoned to another world to become one of the Four Cardinal Heroes...</p>
+                            </div>
+                        </div>
+                        <!-- Back -->
+                        <div class="absolute backface-hidden w-full h-full bg-anime-dark rounded-lg overflow-hidden shadow-lg border border-anime-purple/20 rotate-y-180 p-4 flex flex-col">
+                            <h3 class="font-bold text-white">Shield Hero</h3>
+                            <div class="flex items-center mt-2 text-sm">
+                                <span class="text-yellow-400">★★★★★</span>
+                                <span class="text-gray-400 ml-1">(4.8)</span>
+                            </div>
+                            <div class="mt-2 text-xs text-gray-400">
+                                <div class="flex justify-between py-1 border-b border-gray-700">
+                                    <span>Author:</span>
+                                    <span class="text-white">Aneko Yusagi</span>
+                                </div>
+                                <div class="flex justify-between py-1 border-b border-gray-700">
+                                    <span>Chapters:</span>
+                                    <span class="text-white">327</span>
+                                </div>
+                                <div class="flex justify-between py-1">
+                                    <span>Status:</span>
+                                    <span class="text-green-400">Ongoing</span>
+                                </div>
+                            </div>
+                            <button class="mt-auto bg-gradient-to-r from-anime-purple to-anime-blue text-white py-2 rounded text-sm font-medium hover:opacity-90 transition-opacity">
+                                Read Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Novel Card 4 -->
+                <div class="group perspective-1000">
+                    <div class="relative h-72 transform-style-preserve-3d transition-transform duration-500 group-hover:rotate-y-180">
+                        <!-- Front -->
+                        <div class="absolute backface-hidden w-full h-full bg-anime-dark rounded-lg overflow-hidden shadow-lg border border-anime-purple/20">
+                            <div class="h-48 bg-gradient-to-br from-pink-500/30 to-red-500/30 relative overflow-hidden">
+                                <img src="https://i.imgur.com/7X3QJZr.jpg" alt="Novel cover" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                                <div class="absolute bottom-3 left-3">
+                                    <span class="bg-anime-purple text-xs font-bold px-2 py-1 rounded">COMPLETED</span>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <h3 class="font-bold text-white line-clamp-1">Overlord</h3>
+                                <p class="text-xs text-gray-400 mt-1 line-clamp-2">When a popular MMORPG is about to shut down, veteran player Momonga stays logged in until...</p>
+                            </div>
+                        </div>
+                        <!-- Back -->
+                        <div class="absolute backface-hidden w-full h-full bg-anime-dark rounded-lg overflow-hidden shadow-lg border border-anime-purple/20 rotate-y-180 p-4 flex flex-col">
+                            <h3 class="font-bold text-white">Overlord</h3>
+                            <div class="flex items-center mt-2 text-sm">
+                                <span class="text-yellow-400">★★★★★</span>
+                                <span class="text-gray-400 ml-1">(4.9)</span>
+                            </div>
+                            <div class="mt-2 text-xs text-gray-400">
+                                <div class="flex justify-between py-1 border-b border-gray-700">
+                                    <span>Author:</span>
+                                    <span class="text-white">Maruyama Kugane</span>
+                                </div>
+                                <div class="flex justify-between py-1 border-b border-gray-700">
+                                    <span>Chapters:</span>
+                                    <span class="text-white">412</span>
+                                </div>
+                                <div class="flex justify-between py-1">
+                                    <span>Status:</span>
+                                    <span class="text-blue-400">Completed</span>
+                                </div>
+                            </div>
+                            <button class="mt-auto bg-gradient-to-r from-pink-500 to-red-500 text-white py-2 rounded text-sm font-medium hover:opacity-90 transition-opacity">
+                                Read Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Novel Card 5 -->
+                <div class="group perspective-1000">
+                    <div class="relative h-72 transform-style-preserve-3d transition-transform duration-500 group-hover:rotate-y-180">
+                        <!-- Front -->
+                        <div class="absolute backface-hidden w-full h-full bg-anime-dark rounded-lg overflow-hidden shadow-lg border border-anime-purple/20">
+                            <div class="h-48 bg-gradient-to-br from-blue-500/30 to-purple-500/30 relative overflow-hidden">
+                                <img src="https://i.imgur.com/6X3QJZr.jpg" alt="Novel cover" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                                <div class="absolute bottom-3 left-3">
+                                    <span class="bg-anime-red text-xs font-bold px-2 py-1 rounded">HOT</span>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <h3 class="font-bold text-white line-clamp-1">Konosuba: God's Blessing on This Wonderful World!</h3>
+                                <p class="text-xs text-gray-400 mt-1 line-clamp-2">After dying a laughable and pathetic death, Kazuma Sato meets a beautiful but rude goddess...</p>
+                            </div>
+                        </div>
+                        <!-- Back -->
+                        <div class="absolute backface-hidden w-full h-full bg-anime-dark rounded-lg overflow-hidden shadow-lg border border-anime-purple/20 rotate-y-180 p-4 flex flex-col">
+                            <h3 class="font-bold text-white">Konosuba</h3>
+                            <div class="flex items-center mt-2 text-sm">
+                                <span class="text-yellow-400">★★★★☆</span>
+                                <span class="text-gray-400 ml-1">(4.7)</span>
+                            </div>
+                            <div class="mt-2 text-xs text-gray-400">
+                                <div class="flex justify-between py-1 border-b border-gray-700">
+                                    <span>Author:</span>
+                                    <span class="text-white">Natsume Akatsuki</span>
+                                </div>
+                                <div class="flex justify-between py-1 border-b border-gray-700">
+                                    <span>Chapters:</span>
+                                    <span class="text-white">215</span>
+                                </div>
+                                <div class="flex justify-between py-1">
+                                    <span>Status:</span>
+                                    <span class="text-blue-400">Completed</span>
+                                </div>
+                            </div>
+                            <button class="mt-auto bg-gradient-to-r from-blue-500 to-purple-500 text-white py-2 rounded text-sm font-medium hover:opacity-90 transition-opacity">
+                                Read Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Genres -->
+    <section class="py-16 bg-anime-dark/90 backdrop-blur-sm bg-[url('https://www.transparenttextures.com/patterns/rice-paper.png')]">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between mb-10">
+                <h2 class="text-3xl font-bold">
+                    <span class="bg-gradient-to-r from-anime-pink to-anime-red bg-clip-text text-transparent">Popular</span>
+                    <span class="text-white">Genres</span>
+                </h2>
+                <a href="#" class="text-anime-blue hover:underline flex items-center">
+                    View All Genres
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                <a href="#" class="bg-anime-darker/80 hover:bg-anime-darker border border-anime-purple/20 rounded-lg p-6 text-center transition-all hover:shadow-lg hover:shadow-anime-purple/10 group">
+                    <div class="w-16 h-16 bg-gradient-to-br from-anime-red/20 to-anime-red/40 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:from-anime-red/30 group-hover:to-anime-red/50 transition-all">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-anime-red" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-white">Action</h3>
+                    <p class="text-xs text-gray-400 mt-1">1,245 Novels</p>
+                </a>
+
+                <a href="#" class="bg-anime-darker/80 hover:bg-anime-darker border border-anime-purple/20 rounded-lg p-6 text-center transition-all hover:shadow-lg hover:shadow-anime-blue/10 group">
+                    <div class="w-16 h-16 bg-gradient-to-br from-anime-blue/20 to-anime-blue/40 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:from-anime-blue/30 group-hover:to-anime-blue/50 transition-all">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-anime-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 19.477 5.754 19 7.5 19s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 19.477 18.247 19 16.5 19c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-white">Adventure</h3>
+                    <p class="text-xs text-gray-400 mt-1">982 Novels</p>
+                </a>
+
+                <a href="#" class="bg-anime-darker/80 hover:bg-anime-darker border border-anime-purple/20 rounded-lg p-6 text-center transition-all hover:shadow-lg hover:shadow-anime-pink/10 group">
+                    <div class="w-16 h-16 bg-gradient-to-br from-anime-pink/20 to-anime-pink/40 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:from-anime-pink/30 group-hover:to-anime-pink/50 transition-all">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-anime-pink" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-white">Romance</h3>
+                    <p class="text-xs text-gray-400 mt-1">876 Novels</p>
+                </a>
+
+                <a href="#" class="bg-anime-darker/80 hover:bg-anime-darker border border-anime-purple/20 rounded-lg p-6 text-center transition-all hover:shadow-lg hover:shadow-anime-purple/10 group">
+                    <div class="w-16 h-16 bg-gradient-to-br from-anime-purple/20 to-anime-purple/40 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:from-anime-purple/30 group-hover:to-anime-purple/50 transition-all">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-anime-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-white">Fantasy</h3>
+                    <p class="text-xs text-gray-400 mt-1">1,532 Novels</p>
+                </a>
+
+                <a href="#" class="bg-anime-darker/80 hover:bg-anime-darker border border-anime-purple/20 rounded-lg p-6 text-center transition-all hover:shadow-lg hover:shadow-yellow-500/10 group">
+                    <div class="w-16 h-16 bg-gradient-to-br from-yellow-500/20 to-yellow-500/40 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:from-yellow-500/30 group-hover:to-yellow-500/50 transition-all">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-white">Isekai</h3>
+                    <p class="text-xs text-gray-400 mt-1">754 Novels</p>
+                </a>
+
+                <a href="#" class="bg-anime-darker/80 hover:bg-anime-darker border border-anime-purple/20 rounded-lg p-6 text-center transition-all hover:shadow-lg hover:shadow-green-500/10 group">
+                    <div class="w-16 h-16 bg-gradient-to-br from-green-500/20 to-green-500/40 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:from-green-500/30 group-hover:to-green-500/50 transition-all">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-bold text-white">Slice of Life</h3>
+                    <p class="text-xs text-gray-400 mt-1">621 Novels</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Updates -->
+    <section class="py-16 bg-gradient-to-b from-anime-darker/70 to-anime-dark/90">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between mb-10">
+                <h2 class="text-3xl font-bold">
+                    <span class="bg-gradient-to-r from-anime-purple to-anime-blue bg-clip-text text-transparent">Latest</span>
+                    <span class="text-white">Updates</span>
+                </h2>
+                <a href="#" class="text-anime-pink hover:underline flex items-center">
+                    View All Updates
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </a>
+            </div>
+            
+            <div class="bg-anime-darker/80 backdrop-blur-sm border border-anime-purple/20 rounded-lg overflow-hidden">
+                <div class="grid grid-cols
