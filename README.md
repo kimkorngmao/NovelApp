@@ -96,7 +96,6 @@ After seeding the database, you can login with these credentials:
 - Title
 - Description
 - Cover image
-- Type (series/short)
 - Status (ongoing/completed)
 - Category association
 - Author (User) association
