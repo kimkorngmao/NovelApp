@@ -32,8 +32,8 @@ Paakwaan is a web application platform for reading and publishing Thai novels. I
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/paakwaan.git
-cd paakwaan
+git clone https://github.com/kimkorngmao/NovelApp.git
+cd NovelApp
 ```
 
 2. Install PHP dependencies:
